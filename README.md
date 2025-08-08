@@ -1,62 +1,92 @@
-# Portfolio
+# Portfolio: PMO and Data Analytics Projects
 
-## Revenue Analytics and Forecasting Project
+Welcome to my data analytics and project management office (PMO) portfolio. This repository showcases a collection of business-focused analytics projects that bring together data science, time series forecasting, reporting automation and strategic business analysis.
 
-### Overview
+Each project is independent and designed to solve real-world business challenges using a blend of Python scripting, Excel modelling, Power BI dashboards and executive-level presentations. These solutions are tailored to improve operational efficiency, drive revenue insights and support data-driven decision-making across commercial and PMO contexts.
 
-This project was conceived to furnish the senior leadership team with a transparent and data-driven understanding of historical revenue performance and to deliver robust forward projections. 
-It encompasses comprehensive data preparation, exploratory analysis, statistical modelling and interactive reporting. 
-The forecasting component leverages both ARIMA and Holt-Winters methods to produce reliable estimates for the next three and twelve months. 
-Outputs are delivered via a Power BI dashboard and an executive presentation, ensuring that stakeholders can engage with key insights and monitor revenue trends in real time.
+## Projects
 
-### Data Preparation and Interpolation
+### 1. Business Performance Analytics (2023–2027)
 
-A year’s worth of daily records for average revenue per user (ARPU) across seven markets and total revenue in euros served as the primary dataset. 
-Initial processing involved converting date strings into a proper datetime index and addressing missing entries. 
-Spline interpolation of order five was applied to smooth gaps in the ARPU series for each market, preserving the integrity of the time series. 
-The interpolated series were saved to file and visualised to confirm continuity and consistency before further analysis.
+#### Overview
 
-### Exploratory Time Series Analysis
+This project consolidates shipment and revenue records from 2023 through early 2027 to deliver a clear, data-driven view of business performance. The dataset includes 199 shipments across 18 customers in 17 countries and four product lines, generating approximately €25,077.71 in total revenue.
 
-Exploratory steps included plotting the raw and interpolated series, decomposing total revenue into trend, seasonal and residual components, and assessing stationarity. 
-Augmented Dickey-Fuller tests were applied to both the original and differenced series to determine the need for transformations. 
-Autocorrelation and partial autocorrelation functions provided guidance on appropriate model orders and seasonal lags. 
-These exploratory analyses informed the parameterisation of both ARIMA and Holt-Winters models.
+The analysis describes historical trends in shipment volume and revenue, identifies high-performing customers and product lines, uncovers seasonal patterns, and provides commercial recommendations to support future business planning.
 
-### ARIMA Forecasting
+#### Data Summary and Cleaning
 
-An automated ARIMA routine selected optimal orders for the non-seasonal and seasonal components by iteratively testing combinations against stationarity criteria and information-criterion metrics. 
-The final model was fitted to the daily total-revenue series and generated point forecasts for a 90-day horizon. 
-Confidence intervals at the 70, 80 and 95 per cent levels were computed, allowing decision-makers to appreciate the range of potential outcomes. 
-Model performance was evaluated using mean squared error, root mean squared error and mean absolute error, and the fitted values were compared visually to the historical data to validate accuracy.
+The raw dataset, stored in Excel format, contained shipment-level details including product category, customer, shipment volume, origin country, revenue, and shipment date. Initial review revealed sparse data for 2023 and incomplete records beyond February 2027. These limitations were documented and excluded from forward-looking analysis.
 
-### Holt-Winters Exponential Smoothing
+Data cleaning steps included:
+- Standardising date formats
+- Validating and correcting revenue values
+- Normalising country and product names
+- Creating derived time fields for monthly and yearly aggregation
 
-Multiple Holt-Winters specifications were assessed, including additive and multiplicative forms of trend and seasonality with damped-trend enabled. 
-Each configuration was fitted to the total-revenue series, and performance metrics guided the selection of the best model. 
-The chosen specification produced a forecast that complemented the ARIMA output, providing an alternate perspective on future revenue dynamics. 
-Residuals of the best Holt-Winters model were analysed to confirm the absence of autocorrelation and to ensure that model assumptions held.
+The final cleaned dataset is structured for time series, comparative, and seasonal analysis.
 
-### Market Contribution Analysis
+#### Analysis Highlights
 
-In addition to aggregate revenue forecasts, the project examined market-level ARPU trends to determine which regions contribute most significantly to total revenue. 
-This analysis highlighted high-value markets and informed recommendations for resource allocation and strategic focus. 
-Findings were incorporated into both the dashboard and the executive presentation to guide leadership in identifying priority markets.
+Revenue and shipment counts rose steadily from 2024 to 2026, with approximately 10 per cent annual growth. Recurring monthly peaks were observed in May, September and October, while February remained consistently low. Economy Freight led revenue contribution, while Express Freight and Parcel services showed stable growth. A small number of customers generated most of the value, with select smaller accounts displaying high revenue per shipment. Germany, France and Hungary were top performers, while Japan and Poland showed exceptional profitability per unit shipped.
 
-### Reporting and Executive Presentation
+#### Strategic Recommendations
 
-A Power BI dashboard was developed to deliver an interactive view of daily and monthly revenue evolution, ARPU variations by market and forecast projections. 
-The interface allows users to filter by market, switch between short-term and long-term outlooks and visualise confidence intervals. 
-An accompanying executive presentation distils the analysis into concise slides, outlining key observations, forecast narratives and strategic considerations such as pricing pressures, customer churn,
-market campaigns and macroeconomic influences.
+- Prioritise high-value markets: Japan, Poland, Germany, France and Spain  
+- Reassess commercial strategies in lower-performing regions  
+- Align operations with seasonal demand patterns  
+- Balance profitability and cost across freight service tiers  
+- Improve 2027 data completeness for stronger forecasting
 
-### Technical Environment
+#### Reporting and Communication
 
-All data processing and modelling were performed in Python 3. 
-Core libraries included pandas and numpy for data manipulation, matplotlib for visualisation, statsmodels and pmdarima for time series modelling, and scikit-learn for performance evaluation. 
-The Power BI desktop application served as the platform for business intelligence reporting and dashboard authoring.
+Delivered via:
+- An interactive Power BI dashboard  
+- An executive presentation highlighting key metrics, methods and decisions  
+- Structured Excel workbooks with embedded documentation
 
-### Deliverables
+#### Tools Used
 
-The project deliverables comprise a cleaned and validated dataset, interpolation outputs, exploratory diagnostic plots, ARIMA and Holt-Winters forecasts with confidence intervals, market contribution insights,
-an interactive Power BI dashboard and an executive slide deck. Together, these assets equip the leadership team with actionable intelligence to drive data-informed decisions and sustain revenue growth.
+Excel, Power BI, PowerPoint
+
+---
+
+### 2. Revenue Forecasting and Market Modelling (ARIMA & Holt-Winters)
+
+#### Overview
+
+This project supports leadership with reliable revenue forecasts across seven markets. It combines time series modelling, statistical analysis, and business reporting to deliver short-term (3 months) and long-term (12 months) outlooks using ARIMA and Holt-Winters models.
+
+#### Data and Preparation
+
+Daily revenue and ARPU data was cleaned and interpolated using spline functions. After preprocessing, data was analysed for trend and stationarity using decomposition and ADF tests.
+
+#### Forecasting Approach
+
+- **ARIMA**: Selected using automated parameter tuning and tested against confidence intervals  
+- **Holt-Winters**: Multiple configurations tested, residuals analysed, best model selected by RMSE  
+
+Forecasts were visualised with uncertainty bands and exported to CSV for integration into dashboards.
+
+#### Tools Used
+
+Excel, Python (pandas, NumPy, matplotlib, seaborn, statsmodels, pmdarima, scikit-learn ), Power BI, PowerPoint
+
+#### Insights and Reporting
+
+Revenue forecasts and market contribution trends were included in a Power BI dashboard and executive presentation. These deliverables support strategic planning and operational focus by highlighting regional revenue drivers and emerging risks.
+
+---
+
+## Connect
+
+For collaboration, inquiries, or to discuss any of the projects:  
+[Connect on LinkedIn](https://www.linkedin.com/in/serdaregeenderer/)
+
+## License
+
+This work is dual-licensed under **GPL-3.0-or-later** **and** **CC-BY-NC-4.0**.  
+The content of this portfolio (dashboards, presentations, documentation) is licensed under the [**Creative Commons Attribution-NonCommercial 4.0 International**](https://creativecommons.org/licenses/by-nc/4.0/legalcode.en).  
+All source code and Python scripts are licensed under the [**GNU General Public License v3.0**](https://spdx.org/licenses/GPL-3.0-or-later.html).
+
+`SPDX-License-Identifier: GPL-3.0-or-later OR CC-BY-NC-4.0`
