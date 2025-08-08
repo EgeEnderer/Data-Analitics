@@ -53,6 +53,9 @@ Excel, Power BI, PowerPoint
 
 ### 2. Revenue Forecasting and Market Modelling (ARIMA & Holt-Winters)
 
+- [Link to Overview of PowerBI Dasboard](https://github.com/EgeEnderer/Portfolio/blob/a257db9473af3619cfddd67ecc5e5cc3b489193a/Revenue%20Analytics/Revenue%20Analysis%20Dashboard.pdf)
+- [Link to PowerBI Dasboard](https://github.com/EgeEnderer/Portfolio/blob/a257db9473af3619cfddd67ecc5e5cc3b489193a/Revenue%20Analytics/Revenue%20Analysis%20Dashboard.pbix)
+
 #### Overview
 
 This project supports leadership with reliable revenue forecasts across seven markets. It combines time series modelling, statistical analysis, and business reporting to deliver short-term (3 months) and long-term (12 months) outlooks using ARIMA and Holt-Winters models.
