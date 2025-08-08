@@ -1,6 +1,6 @@
-# Portfolio: PMO and Data Analytics Projects
+# Portfolio
 
-Welcome to my data analytics and project management office (PMO) portfolio. This repository showcases a collection of business-focused analytics projects that bring together data science, time series forecasting, reporting automation and strategic business analysis.
+Welcome to my data analytics and project management portfolio. This repository showcases a collection of business-focused analytics projects that bring together data science, time series forecasting, reporting automation and strategic business analysis.
 
 Each project is independent and designed to solve real-world business challenges using a blend of Python scripting, Excel modelling, Power BI dashboards and executive-level presentations. These solutions are tailored to improve operational efficiency, drive revenue insights and support data-driven decision-making across commercial and PMO contexts.
 
@@ -59,12 +59,20 @@ This project supports leadership with reliable revenue forecasts across seven ma
 
 #### Data and Preparation
 
-Daily revenue and ARPU data was cleaned and interpolated using spline functions. After preprocessing, data was analysed for trend and stationarity using decomposition and ADF tests.
+Daily revenue and ARPU data was cleaned and interpolated using spline functions. 
+
+Data cleaning steps included:
+- Standardising date formats
+- Validating and correcting revenue values
+- Creating derived time fields for monthly and yearly aggregation
+- Interpolating missing values and imputing it with interpolated values
+  
+After preprocessing, data was analysed for trend and stationarity using decomposition and ADF tests.
 
 #### Forecasting Approach
 
-- **ARIMA**: Selected using automated parameter tuning and tested against confidence intervals  
-- **Holt-Winters**: Multiple configurations tested, residuals analysed, best model selected by RMSE  
+- **ARIMA**: Multiple configurations were tested using automated parameter tuning. Residuals were analysed to validate assumptions, and confidence intervals were computed. The best model was selected based on RMSE.
+- **Holt-Winters**: Similarly, several configurations were explored, including different seasonal and trend components. The models underwent residual diagnostics and were tested against confidence intervals. Final model selection was based on lowest RMSE.
 
 Forecasts were visualised with uncertainty bands and exported to CSV for integration into dashboards.
 
